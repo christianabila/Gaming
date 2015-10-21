@@ -2,7 +2,6 @@ package simplegame;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
@@ -66,6 +65,13 @@ public class Main {
 		lblFinish.setBackground(SWTResourceManager.getColor(SWT.COLOR_RED));
 		lblFinish.setText("Finish");
 		lblFinish.setBounds(390, 95, 2, 64);
+		
+		final Label lblGreat = new Label(shlSimpleGame, SWT.NONE);
+		lblGreat.setForeground(SWTResourceManager.getColor(SWT.COLOR_DARK_GREEN));
+		lblGreat.setFont(SWTResourceManager.getFont(".Helvetica Neue DeskInterface", 19, SWT.NORMAL));
+		lblGreat.setBounds(179, 178, 57, 24);
+		lblGreat.setText("Great!");
+		lblGreat.setVisible(false);
 
 		shlSimpleGame.addKeyListener(new KeyAdapter() {
 			@Override
@@ -79,9 +85,7 @@ public class Main {
 
 					if(bounds.x == 330)
 					{
-						MessageBox m = new MessageBox(shlSimpleGame);
-						m.setMessage("Great!");
-						m.open();
+						lblGreat.setVisible(true);
 					}
 				}
 			}
