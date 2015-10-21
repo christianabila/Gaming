@@ -76,6 +76,7 @@ public class Main {
 		shlSimpleGame.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
+				
 				if(e.keyCode == 16777220)
 				{
 					Rectangle bounds = lblJeton.getBounds();
@@ -84,9 +85,7 @@ public class Main {
 						lblJeton.setBounds(bounds.x+10, bounds.y, bounds.width, bounds.height);
 
 					if(bounds.x == 330)
-					{
 						lblGreat.setVisible(true);
-					}
 				}
 			}
 		});
